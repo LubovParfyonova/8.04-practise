@@ -1,0 +1,7 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    background-color: pink;
+    border: 2px dashed red;
+}
