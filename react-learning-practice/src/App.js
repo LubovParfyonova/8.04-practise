@@ -1,34 +1,23 @@
 import './App.css';
 import React from 'react'
-import FormContainer from './components/FormContainer';
-// import ToDoList from './components/ToDoList';
 
-const List = (props) => { 
-  const {children} = props;
-  return (
-   
-    <article>
-      <ul title='test'>
-        {children}
-      </ul>
-    </article>
-  )
-}
+import ImageWrapper from './components/ImageWrapper/imdex';
+
 function App() {
 
 
-  const number = [1, 2, 3, 4, 5];
-  const renderElement = () => {
-    return number.map((currentNumber, index) => {
-      const liJSX = <li key={currentNumber}>{currentNumber}</li>
-      return liJSX
-    })
-  }
   return (
-    <List>
-      {renderElement()}
-    </List>
-
+    <ImageWrapper 
+    width='300px' 
+    height='150px'
+    title='hello'
+    tabIndex='2'
+    >
+      <img 
+      width='100%'
+      alt='We are go'
+      src='https://www.volynpost.com/img/modules/news/5/e7/78709318b05b9c2fb9660ea269922e75/rss-photo.jpg'/>
+    </ImageWrapper>
   );
 }
 
