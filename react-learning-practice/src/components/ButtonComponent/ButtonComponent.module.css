@@ -1,9 +1,0 @@
-button {
-    width: 350px;
-    height:100px;
-    border-radius: 55px;
-    font-size: 2em;
-    color: white;
-    border: none;
-    background: linear-gradient(left red, blue, yellow);
-}

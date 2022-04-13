@@ -1,48 +1,69 @@
-import React from 'react';
+import React from "react";
+// import './style.css';
 import styles from './FormToDo.module.css';
-import cx from 'classnames';
+import cx from "classnames";
 
-class FormToDo extends React.Component{
-    constructor(props){
-        super(props)
+class FormToDo extends React.Component {
+    constructor(props) {
+        super(props);
         this.state = {
             todo: '',
             isValid: true
         }
     }
-    changeInput = (event) =>{
+
+
+    changeInput = (event) => {
         const {name, value} = event.target;
-        if(value.includes(' ')){
+
+        if (value.includes(' ')) {
             this.setState({
                 isValid: false
             })
         }
+
         this.setState({
             [name]: value
-        })
+        });
     }
+
     submitHandler = (event) => {
-        event.preventDefault()
+        event.preventDefault();
         const {props, state} = this;
-        props.addToDo(state.todo);
+        props.addToDo(state.todo); 
         this.setState({
             todo: ''
         })
     }
 
-
     render() {
-        const inputClassname = cx ({
-            [styles.inputNormal]: true,
-            [styles.invalidInput]: !this.state.invalid
-        })
+
+        const inputClassName = cx(styles.inputNormal, {
+            [styles.invalidInput]: !this.state.isValid
+        });
+
         return(
-            <form className={styles.container} onSubmit={this.submitHandler}>
-                <input className={cx} type='text' name='todo' value={this.state.todo} onChange={this.changeInput}/>
-                <button type='submit' >Add ToDo</button>
+            <form onSubmit={this.submitHandler} className={styles.container}>
+                <input type="text" name="todo" value={this.state.todo} onChange={this.changeInput} className={inputClassName}/>
+                <button type="submit">Add ToDo</button>
             </form>
         )
     }
 }
 
-export default FormToDo
+export default FormToDo;
+
+
+// function cx(objectStyles) {
+// return Object.entries(objectStyles)
+// .filter(([className, condition]) => condition)
+// .map(([className, condition]) => className)
+// .join(' ')
+// }
+// [[key, value], [key, value], [key, value]] => [key1, key2, key3] => "key1 key2 key3"
+
+/*
+{
+    имяКласса: Условие, при котором этот класс нам нужен
+}
+*/

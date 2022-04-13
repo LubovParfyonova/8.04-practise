@@ -1,31 +1,36 @@
-import React from 'react';
-import FormToDo from './FormToDo';
+import React from "react";
+import FormToDo from "./FormToDo";
 import List from './List';
+import './style.css';
 
 
 class ToDoList extends React.Component {
-    constructor(props){
-        super(props)
+    constructor(props) {
+        super(props);
         this.state = {
-            todos: []
+          toDos: []
         }
     }
+
     newToDo = (inputValue) => {
-      const {todos} = this.state;
-      const copyArray = [...todos]
-      copyArray.push(inputValue)
-      this.setState({
-        todos: copyArray
-      })
+        const {toDos} = this.state;
+        const copyArray = [...toDos];
+        copyArray.push(inputValue);
+        this.setState({
+            toDos: copyArray
+        })
     }
 
-    render () {
+
+    render() {
+
         return(
-            <>       
-            <FormToDo addToDo={this.newToDo} />  
-            <List toDoArray={this.state.todos}/>
+            <>
+                <FormToDo addToDo={this.newToDo}/>
+                <List toDoArray={this.state.toDos}/>
             </>
         )
     }
 }
-export default ToDoList
+
+export default ToDoList;
