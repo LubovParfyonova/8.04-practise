@@ -1,11 +1,13 @@
-import React, { Children } from 'react';
+import React from 'react';
 
 const Container = (props) => {
-    const inlineStyle = {
-        maxwidth: '1200px'
-    }
+
+const inlineStyles = {
+    maxWidth: '1200px'
+}
+
     return (
-        <div style={inlineStyle}>
+        <div style={inlineStyles}>
             {props.children}
         </div>
     );

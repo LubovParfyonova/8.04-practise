@@ -1,30 +1,34 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 
 const FlexContainer = (props) => {
-    const {justifyContent, flexDirection, alighItems, children} = props;
-    const inlineStyle = {
-        width: '1200px',
-        display: 'flex',
-        justifyContent,
-        flexDirection,
-        alighItems
-    }
+    const {children, flexDirection, justifyContent, alignItems} = props;
+
+const inlineStyles = {
+    display: 'flex',
+    flexDirection,
+    justifyContent,
+    alignItems
+}
+
     return (
-        <div style={inlineStyle}>
+        <div style={inlineStyles}>
             {children}
         </div>
     );
 }
+
 FlexContainer.defaultProps = {
-    width: '1200px',
-    justifyContent: 'row',
-    flexDirection: 'flex-start',
-    alighItems:'flex-start' 
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'flex-start',
 }
+
+
 FlexContainer.propTypes = {
-    justifyContent: PropTypes.string,
     flexDirection: PropTypes.string,
-    alighItems: PropTypes.string
+    justifyContent: PropTypes.string,
+    alignItems: PropTypes.string,
 }
+
 export default FlexContainer;

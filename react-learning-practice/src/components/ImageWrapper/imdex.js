@@ -1,15 +1,16 @@
 import React from 'react';
 
-
 const ImageWrapper = (props) => {
-    const {width, height, children, ...restProps} = props;
+    const {children, width, height, ...restProps} = props;
 
-    const inlineStyle = {
-        width,
-        height
+    //CSS-in-JS
+    const inlineStyles = {
+     width,
+     height,
     }
+
     return (
-        <div style={inlineStyle} {...restProps}>
+        <div style={inlineStyles} {...restProps}>
             {children}
         </div>
     );
