@@ -1,11 +1,16 @@
 button {
-    width: 350px;
-    height:100px;
-    border-radius: 55px;
-    font-size: 2em;
-    color: rgb(87, 28, 28);
-    border: none;
-    background: rgb(208,237,251);
-    background: linear-gradient(90deg, rgba(208,237,251,1) 0%, rgba(159,136,241,1) 35%, rgba(25,150,255,1) 100%);
-    box-shadow: 0px 10px 13px -7px #000000, 0px 15px 13px 11px rgba(0,0,0,0.34);
+  width: 350px;
+  height: 100px;
+  border-radius: 55px;
+  font-size: 2em;
+  color: rgb(87, 28, 28);
+  border: none;
+  background: rgb(208, 237, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(208, 237, 251, 1) 0%,
+    rgba(159, 136, 241, 1) 35%,
+    rgba(25, 150, 255, 1) 100%
+  );
+  box-shadow: 0px 10px 13px -7px #000000, 0px 15px 13px 11px rgba(0, 0, 0, 0.34);
 }
